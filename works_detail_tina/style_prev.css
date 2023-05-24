@@ -1,0 +1,631 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+img{
+	vertical-align:bottom;
+	width:100%;
+}
+
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+a {
+	text-decoration: none;
+	color:inherit;
+}
+
+body{
+    color: #333;
+	font-size:17px;
+	line-height: 1.7;
+	letter-spacing: 0.05em;
+	font-family:"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+/*--------↓ここからbody スマホ用--------*/
+@media screen and (max-width: 767px) {
+	body{
+		font-size:14px;
+	}
+}
+/*--------↑ここまでbody スマホ用--------*/
+
+.wrapper{
+	
+}
+
+/*======== ↓ここからnav ========*/
+header{
+	position: fixed;
+	background-color: #f8f7f2;
+	height:100vh;
+	top: 0;
+	right:0;
+	z-index: 3;
+	width:80px;
+}
+
+#hamburger {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin:auto;
+	height:100vh;
+	z-index:5;
+}
+
+.hum-btn{
+	width: 100%;
+	height:60px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 6;
+	cursor: pointer;
+	background-color: #fffff6;
+}
+
+.span1, .span2, .span3 {
+	display: block;
+	margin:auto;
+	width: 50px;
+	height: 2px;
+	/*background-color: aa9758;*/
+	background-color: #c0b283;
+	position: absolute;
+	right: 15px;
+	transition: .3s;
+	z-index: 6;
+}
+
+.span1 {
+  top: 20px;
+}
+
+.span2 {
+  top: 28px;
+}
+
+.span3 {
+  top: 36px;
+}
+
+.toggle .span2 {
+  display: none;
+  opacity: 0;
+}
+
+.toggle .span1 {
+  width: 60px;
+  transform: rotate(15deg);
+  top: 27px;
+  right: 12px;
+}
+
+.toggle .span3 {
+  width: 60px;
+  transform: rotate(-15deg);
+  top: 27px;
+  right: 12px;
+}
+
+.hum-navi{
+	width: 400%;
+	height: 100%;
+	background-color:rgba(255, 255, 246, 0.99);
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	right:-400%;
+	transition: 1s;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 0 10px rgb(0 0 0 / 2%);
+
+}
+
+.hum-navi.toggle {
+	right:80px;
+} 
+
+.humOption{
+	width:100%;
+	height:20%;
+}
+
+.humOption a{
+	display: block;
+	width:90%;
+	height:100%;
+	margin: auto;
+	transition: 0.2s;
+	padding:auto;
+	position: relative;
+	font-size:min(30px, 4vh);
+	letter-spacing: 0.2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+.jp-navi{
+	display: block;
+	font-size:min(17px, 2.4vh);
+	letter-spacing: 1px;
+	line-height:2;
+}
+.humOption a::before {
+    background:#fffff6;
+    content: '';
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    left: 25%;
+    bottom: 10%;
+    margin: auto;
+    transform-origin: center top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+}
+.humOption a:hover::before {
+    transform-origin: center top;
+    transform: scale(1, 1);
+    height: 1px;
+}
+
+.humOption a:hover{
+	background-color:#c0b283;
+	color:#fffff6;
+	transition: 0.2s;
+}
+
+.hum-bar{
+	width:100%;
+	height:100%;
+	position: relative;
+	background-color:#fffff6;
+	z-index: 5;
+}
+
+.contact-nav{
+	writing-mode: vertical-lr;
+	vertical-align: middle;
+	color:#333;
+	position: absolute;
+	top:80px;
+	left:10px;
+	font-size:1.2em;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+.contact-nav:hover{
+	color:#c0b283;
+	transition: 0.2s;
+}
+/*--------↓ここからnav スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.hum-bar{
+		display: none;
+	}
+	
+	header{
+		height:60px;
+	}
+	
+	.wrapper{
+		margin-right:initial;
+	}
+	
+	.hum-navi{
+		width:321px;
+		box-shadow:initial;
+	}
+	
+	.hum-navi.toggle {
+		right:0;
+	} 
+}
+/*--------↑ここまでnav スマホ用--------*/
+/*======== ↑ここまでnav ========*/
+
+/*======== ↓ここからtop ========*/
+.top{
+	width:100%;
+	margin-right:80px;
+	height:270px;
+	display: flex;
+	align-items: center;
+}
+
+.top-left{
+	width:500px;
+	margin-left: 10%;
+}
+
+.works-title{
+	margin: auto;
+}
+
+.works-title a{
+	height:100%;
+	display: block;
+}
+
+.works-title a svg{
+	display: block;
+	margin: auto;
+	fill:#c0b283;
+}
+
+.wt-up{
+	transform: translate(0, 250px);
+	animation:title-up 1s  ease forwards;
+}
+
+@keyframes title-up{
+	from{
+		transform: translate(0, 150px);
+	}
+	
+	to{
+		transform: translate(0, 0);
+	}
+}	
+@-webkit-keyframes title-up{
+	from{
+		transform: translate(0, 150px);
+	}
+	
+	to{
+		transform: translate(0, 0);
+	}
+}	
+
+/*--------↓ここからtop スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.top{
+		margin-right: initial;
+	}
+}
+/*--------↑ここまでtop スマホ用--------*/
+/*======== ↑ここまでtop ========*/
+
+
+
+/*========↓ここからmain ========*/
+
+main{
+	margin-right: 80px;
+}
+
+/*--------↓ここからmain スマホ用--------*/
+@media screen and (max-width: 767px) {
+	main{
+		margin-right:initial;
+	}
+}
+	
+/*--------↑ここまでmain スマホ用--------*/
+/*======== ↑ここまでmain ========*/
+
+	
+/*======== ↓ここからintro ========*/
+.work-intro{
+	width:80%;
+	margin: auto;
+	display: flex;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+.intro-left{
+
+}
+
+.baitai{
+	font-size:17px;
+}
+
+.done{
+	margin: 1em 0;
+}
+
+.intro-right{
+	margin-left: auto;
+	margin-right: 5%;
+	display: flex;
+	align-items: flex-end;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.visit-site a{
+	display:inline-block;
+	padding:10px 20px;
+	border-radius: 25px;
+	background-color: #c0b283;
+	color: #fffff6;
+	transition: 0.2s;
+}
+
+.visit-site a:hover{
+	opasity:0.8;
+	transition: 0.2s;
+}
+
+/*--------↓ここからintro スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.work-intro{
+		flex-direction: column;
+	}
+	
+	.intro-left{
+		font-size: 14px;
+	}
+	.baitai{
+		font-size:14px;
+		display: block;
+	}
+	
+	
+}
+
+/*--------↑ここまでintro スマホ用--------*/
+/*======== ↑ここまでintro ========*/
+
+
+/*======== ↓ここからpc-box ========*/
+
+.pc-box{
+	width:80%;
+	margin: auto;
+}
+
+.pc-thumnail{
+	display: flex;
+	justify-content: space-around;
+	background-color:rgba(192, 178, 131, 0.1);
+	padding:5% 0;
+}
+
+.pc-pic1{
+	display: block;
+	width:45%;
+}
+
+.pc-pic2{
+	width:45%;
+	display: block;
+}
+/*--------↓ここからpc-box スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.pc-box{
+		width:80%;
+		margin:2em auto 1em;
+	}
+}
+/*--------↑ここまでpc-box スマホ用--------*/
+/*======== ↑ここまでpc-box ========*/
+
+
+/*======== ↓ここからexplain ========*/
+.explain{
+	width: 80%;
+	margin: auto;
+}
+
+.sit, .pla, .des, .cod{
+	width:80%;
+	margin-left: auto;
+	margin-top:4%;
+	margin-bottom:4%;
+	display: flex;
+	justify-content:space-around;
+}
+
+.sit-title, .pla-title, .des-title, .cod-title{
+	margin-right:3em;
+}
+
+h3{
+	/*border-bottom:solid 2px #c0b283;*/
+}
+/*--------↓ここからexplain スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.sit, .pla, .des, .cod{
+		width:80%;
+		margin:0 auto;
+		flex-direction: column;
+	}
+	
+	.sit-title, .pla-title, .des-title, .cod-title{
+		margin:1em 0;
+	}
+	
+	.sit-sentence, .pla-sentence, .des-sentence, .cod-sentence{
+		margin-left:2em;
+	}
+
+}
+
+/*--------↑ここまでexplain スマホ用--------*/
+/*======== ↑ここまでexplain ========*/
+
+/*======== ↓ここからsp-box ========*/
+
+.sp-box{
+	width:80%;
+	margin: auto;
+}
+
+.sp-thumnail{
+	display: flex;
+	justify-content: space-around;
+	background-color:rgba(192, 178, 131, 0.1);
+	padding:4% 0;
+}
+
+.sp-thumnail img{
+	display: block;
+	width:30%;
+}
+
+.sp-pic1{
+	margin-bottom:20%;
+}
+
+.sp-pic2{
+	margin-top: 10%;
+	margin-bottom:10%;
+}
+
+.sp-pic3{
+	margin-top: 20%;
+}
+
+/*--------↓ここからsp-box スマホ用--------*/
+@media screen and (max-width: 767px) {
+	.sp-box{
+		width:80%;
+		margin:2em auto 1em;
+	}
+}
+/*--------↑ここまでsp-box スマホ用--------*/
+
+/*======== ↑ここまでsp-box ========*/
+
+/*======== ↓ここからoutro ========*/
+.work-outro{
+	width:80%;
+	margin: auto;
+	margin-bottom: 5%;
+	display: flex;
+	
+}
+
+.outro-left{
+}
+
+.outro-right{
+	margin-left: auto;
+	display: flex;
+	align-items: flex-end;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
+/*======== ↑ここまでoutro ========*/
+
+/*======== ↓ここからfooter ========*/
+footer{
+	background-image: url("../img/night_view_4_blue.jpg");
+	height: 100vh;
+	margin-right:80px;
+	background-position:bottom;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	z-index: 0;
+}
+
+.foot-left,.foot-right{
+	margin-bottom: 150px;
+}
+
+.foot-left{
+	width:400px;
+	margin-left: 85px;
+	margin-top: 100px;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+}
+
+.foot-left p{
+	color:#fffff6;
+	opacity: 0.8;
+	font-size: 1.5em;
+	font-family: '游明朝 Medium', serif;
+    line-height:200%;
+    letter-spacing: 0.2em;
+    display: block;
+}
+
+.foot-left a:hover{
+	opacity:0.7;
+	transition:0.2s;
+}
+
+.foot-right{
+	margin-left: auto;
+	margin-right: 80px;
+	margin-top: 50px;
+}
+
+.foot-right a{
+	display: block;
+	max-width:120px;
+	padding:5px;
+	margin-bottom:20px;
+	opacity:0.8;
+}
+
+.foot-contact-option{
+	width:120%;
+	margin-left: -10%;
+}
+
+.foot-right a:hover{
+	opacity:1;
+	transition:0.2s;
+}
+
+
+/*--------↓ここからfooter スマホ用--------*/
+@media screen and (max-width: 767px) {
+	footer{
+		margin-right: initial;
+		flex-direction: column-reverse;
+	}
+
+	.foot-left{
+		width:90%;
+		margin:10vh auto;
+		
+	}
+	
+	.foot-right{
+		width:90%;
+		margin:0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+	
+	.foot-right a{
+		margin:2vh auto;
+		
+	}
+
+}
+/*--------↑ここまでfooter スマホ用--------*/
+
+/*======== ↑ここまでfooter ========*/
