@@ -863,7 +863,9 @@ header{
 		letter-spacing: 1px;
 		line-height:150%;
 	}
-	
+	.bio td{
+		padding-left: 20px;
+	}
 	.career-sp{
 		display:initial;
 	}
